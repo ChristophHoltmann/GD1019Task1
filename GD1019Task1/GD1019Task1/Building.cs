@@ -2,7 +2,7 @@
 
 namespace GD1019Task1
 {
-    public class Building
+    public class Building : IName
     {
         public string Name { get; private set; }
 

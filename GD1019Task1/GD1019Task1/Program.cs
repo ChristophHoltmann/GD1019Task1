@@ -10,7 +10,8 @@ namespace GD1019Task1
 
         static void Main(string[] args)
         {
-            City city = new City();
+            ICity city = new City();
+            ICity capital = new Capital();
 
             while (true)
             {

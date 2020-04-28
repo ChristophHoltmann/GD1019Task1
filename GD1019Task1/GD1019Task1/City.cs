@@ -3,14 +3,17 @@ using System.Collections.Generic;
 
 namespace GD1019Task1
 {
-    public class City
+    public class City : ICity, IName
     {
         public static int AllCityResidentCount { get; private set; }
+
+        public string Name => "Wonderful City";
 
         private List<Building> buildings = new List<Building>();
 
         public City()
         {
+
         }
 
         public void NewBuilding()

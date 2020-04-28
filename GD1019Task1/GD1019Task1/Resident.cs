@@ -1,6 +1,6 @@
 ﻿namespace GD1019Task1
 {
-    public class Resident
+    public class Resident : IName
     {
         public string Name { get; private set; }
 
