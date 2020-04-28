@@ -11,6 +11,8 @@ namespace GD1019Task1
 
         private List<Building> buildings = new List<Building>();
 
+        private List<Park> parks = new List<Park>();
+
         public City()
         {
 
@@ -61,9 +63,44 @@ namespace GD1019Task1
             }
         }
 
+        public void NewPark(string name)
+        {
+            parks.Add(new Park(name));
+            Console.WriteLine($"New park (name: {name}) added.");
+        }
+
+        public Park GetPark(string name)
+        {
+            //foreach(var park in parks)
+            //{
+            //    if(park.Name.Equals(name))
+            //    {
+            //        return park;
+            //    }
+            //}
+
+            //return null;
+
+            return parks.Find(park => park.Name.Equals(name));
+        }
+
         public void PrintInfo()
         {
             Console.WriteLine($"Building count: {buildings.Count}.");
+            Console.WriteLine($"Park count: {parks.Count}.");
+
+            // ToDo: Static Method
+            string parkNames = string.Empty;
+            foreach (var park in parks)
+            {
+                // Add every name to the string
+                parkNames += $"{park.Name}: tree count = {park.TreeCount}, ";
+            }
+            if (parkNames.Length > 2)
+            {
+                parkNames = parkNames.Remove(parkNames.Length - 2);
+            }
+            Console.WriteLine($"Parks: {parkNames}");
 
             int residentCount = 0;
             int emptyBuildings = 0;

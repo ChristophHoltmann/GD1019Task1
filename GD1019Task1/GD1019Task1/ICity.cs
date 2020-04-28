@@ -8,6 +8,10 @@ namespace GD1019Task1
 
         void NewResident(string name);
 
+        void NewPark(string name);
+
+        Park GetPark(string name);
+
         void PrintInfo();
     }
 }
